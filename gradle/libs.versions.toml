@@ -20,15 +20,14 @@ compose-graphics = {group = "androidx.compose.ui", name = "ui-graphics"}
 compose-preview = {group = "androidx.compose.ui", name = "ui-tooling-preview"}
 compose-material3 = {group = "androidx.compose.material3", name = "material3"}
 compose-icons = {group = "androidx.compose.material", name = "material-icons-extended"}
-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
-
+ui-tooling = { group = "androidx.compose.ui", name ="ui-tooling" }
 
 #Testing
-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espressoCore" }
-ext-junit = { module = "androidx.test.ext:junit", version.ref = "junitVersion" }
-junit = { module = "junit:junit", version.ref = "junit" }
-ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4" }
-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 
 [plugins]
 android-application = {id = "com.android.application", version.ref = "androidGradlePlugin"}
