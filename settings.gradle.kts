@@ -13,7 +13,8 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "My Application"
+rootProject.name = "hipsterApp"
 include(":app")
 include(":foundation")
 include(":foundation:network")
+include(":marvel-app")

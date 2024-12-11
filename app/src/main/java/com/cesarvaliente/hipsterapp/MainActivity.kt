@@ -1,4 +1,4 @@
-package com.cesarvaliente.myapplication
+package com.cesarvaliente.hipsterapp
 
 import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import android.os.Bundle
@@ -36,7 +36,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.cesarvaliente.myapplication.ui.theme.BasicCodelabTheme
+import com.cesarvaliente.hipsterapp.ui.theme.BasicCodelabTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,4 +1,4 @@
-package com.cesarvaliente.myapplication.ui.theme
+package com.cesarvaliente.hipsterapp.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
