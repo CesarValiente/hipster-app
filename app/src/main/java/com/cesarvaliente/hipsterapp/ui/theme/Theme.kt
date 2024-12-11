@@ -1,4 +1,4 @@
-package com.cesarvaliente.myapplication.ui.theme
+package com.cesarvaliente.hipsterapp.ui.theme
 
 import android.app.Activity
 import android.os.Build

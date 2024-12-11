@@ -1,4 +1,4 @@
-package com.cesarvaliente.myapplication
+package com.cesarvaliente.marvelapp
 
 import org.junit.Test
 
