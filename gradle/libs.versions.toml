@@ -9,7 +9,7 @@ composeBom = "2024.12.01"
 androidGradlePlugin = "8.7.3"
 kotlin = "1.9.23"
 androidx-compose-compiler = "1.5.12"
-
+retrofitVersion = "2.11.0"
 
 [libraries]
 core-ktx = {group = "androidx.core", name = "core-ktx", version.ref = "coreKtx"}
@@ -24,6 +24,9 @@ compose-icons = {group = "androidx.compose.material", name = "material-icons-ext
 ui-tooling = { group = "androidx.compose.ui", name ="ui-tooling" }
 kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }
+
+#Non Google/Jetbrains libs
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofitVersion" }
 
 #Testing
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
