@@ -21,6 +21,8 @@ compose-preview = {group = "androidx.compose.ui", name = "ui-tooling-preview"}
 compose-material3 = {group = "androidx.compose.material3", name = "material3"}
 compose-icons = {group = "androidx.compose.material", name = "material-icons-extended"}
 ui-tooling = { group = "androidx.compose.ui", name ="ui-tooling" }
+kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }
 
 #Testing
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
