@@ -18,3 +18,16 @@ dependencies {
     implementation(libs.android.gradlePlugin)
     implementation(libs.kotlin.gradlePlugin)
 }
+
+gradlePlugin {
+    plugins {
+        register("androidApp") {
+            id = "conventionPluginsApp.android.application"
+            implementationClass = "plugins.AndroidAppConventionPlugin"
+        }
+        register("androidAppCompose") {
+            id = "conventionPluginsApp.android.app.compose"
+            implementationClass = "plugins.AndroidComposeConventionPlugin"
+        }
+    }
+}
