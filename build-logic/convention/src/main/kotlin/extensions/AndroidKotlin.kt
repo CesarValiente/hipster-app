@@ -24,13 +24,15 @@ internal fun Project.configureAndroidKotlin(
         packaging.resources.excludes += "/META-INF/{AL2.0, LGPL2.1}"
 
         dependencies {
-            add("implementation", versionCatalog().findLibrary("core.ktx").get())
-            add("implementation", versionCatalog().findLibrary("lifecycle.runtime.ktx").get())
+            with(versionCatalog()) {
+                add("implementation", findLibrary("core.ktx").get())
+                add("implementation", findLibrary("lifecycle.runtime.ktx").get())
 
-            //Testing
-            add("testImplementation", versionCatalog().findLibrary("junit").get())
-            add("androidTestImplementation", versionCatalog().findLibrary("ext.junit").get())
-            add("androidTestImplementation", versionCatalog().findLibrary("espresso.core").get())
+                //Testing
+                add("testImplementation", findLibrary("junit").get())
+                add("androidTestImplementation", findLibrary("ext.junit").get())
+                add("androidTestImplementation", findLibrary("espresso.core").get())
+            }
         }
     }
 
