@@ -11,7 +11,6 @@ internal fun Project.configureAndroidKotlin(
     extension : CommonExtension<*, *, *, *, *, *>
 ) {
     with(extension) {
-        namespace = Config.android.nameSpace
         compileSdk = Config.android.compileSdkVersion
         defaultConfig.apply {
             minSdk = Config.android.minSdkVersion

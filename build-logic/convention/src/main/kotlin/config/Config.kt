@@ -7,10 +7,8 @@ object Config {
         minSdkVersion = 32,
         targetSdkVersion = 35,
         compileSdkVersion = 35,
-        applicationId = "com.cesarvaliente.hipsterapp",
         versionCode = 1,
-        versionName = "1.0",
-        nameSpace = "com.cesarvaliente.hipsterapp"
+        versionName = "1.0"
     )
     val jvm = JvmConfig(
         javaVersion = JavaVersion.VERSION_17,
@@ -22,10 +20,8 @@ data class AndroidConfig(
     val minSdkVersion : Int,
     val targetSdkVersion : Int,
     val compileSdkVersion : Int,
-    val applicationId : String,
     val versionCode : Int,
     val versionName : String,
-    val nameSpace: String
 )
 data class JvmConfig(
     val javaVersion : JavaVersion,
