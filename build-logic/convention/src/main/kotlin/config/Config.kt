@@ -13,8 +13,8 @@ object Config {
         nameSpace = "com.cesarvaliente.hipsterapp"
     )
     val jvm = JvmConfig(
-        javaVersion = JavaVersion.VERSION_1_8,
-        kotlinJvm = JavaVersion.VERSION_1_8.toString(),
+        javaVersion = JavaVersion.VERSION_17,
+        kotlinJvm = JavaVersion.VERSION_17.toString(),
         freeCompilerArgs = listOf("-Xopt-in=kotlin.RequiresOptIn")
     )
 }
