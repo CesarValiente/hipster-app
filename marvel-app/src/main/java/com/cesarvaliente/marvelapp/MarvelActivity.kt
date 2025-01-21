@@ -3,6 +3,7 @@ package com.cesarvaliente.marvelapp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.viewModels
 import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.spring
@@ -21,37 +22,41 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.cesarvaliente.foundation.datamock.SuperHero
-import com.cesarvaliente.foundation.datamock.createSuperHeroesList
 import com.cesarvaliente.marvelapp.ui.theme.MarvelAppTheme
 import com.cesarvaliente.foundation.datamock.R as DataR
 
 class MarvelActivity : ComponentActivity() {
+    private val viewModel : MarvelViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             MarvelAppTheme {
-                SuperHeroesList()
+                val uiState by viewModel.uiState.collectAsState()
+                SuperHeroesList(heroesList = uiState.superHeroesList)
             }
         }
+        viewModel.getSuperHeroList()
     }
 }
 
 @Composable
 fun SuperHeroesList(
     modifier: Modifier = Modifier,
-    heroesList : List<SuperHero> = createSuperHeroesList()
+    heroesList : List<SuperHeroUiState>
 ) {
     LazyColumn(modifier = modifier.padding(vertical = 4.dp)) {
-        items(items = heroesList) {
+        items(items = heroesList) { superHero ->
             SuperHeroCard (
                 modifier,
-                it)
+                superHero)
         }
     }
 }
@@ -59,13 +64,18 @@ fun SuperHeroesList(
 @Preview
 @Composable
 fun SuperHeroesListPreview() {
-    SuperHeroesList()
+    SuperHeroesList(
+        heroesList = listOf(
+            SuperHeroUiState("Tony Stark", "IronMan", "45", 0),
+            SuperHeroUiState("Steve Rogers", "Captain America", "100", 0)
+        )
+    )
 }
 
 @Composable
 fun SuperHeroCard(
     modifier: Modifier = Modifier,
-    superHero: SuperHero
+    superHero: SuperHeroUiState
 ) {
     Card(
         colors = CardDefaults.cardColors(
@@ -81,7 +91,7 @@ fun SuperHeroCard(
 @Composable
 fun SuperHeroCardPreview() {
     MarvelAppTheme {
-        SuperHeroCard(superHero = SuperHero(
+        SuperHeroCard(superHero = SuperHeroUiState(
             name = "Tony Stark",
             superName = "IronMan",
             age = "45",
@@ -91,7 +101,7 @@ fun SuperHeroCardPreview() {
 }
 
 @Composable
-fun CardContent(superHero: SuperHero) {
+fun CardContent(superHero: SuperHeroUiState) {
     Row(modifier = Modifier.fillMaxSize()
         .padding(all = 8.dp)
         .animateContentSize(
