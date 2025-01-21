@@ -1,6 +1,7 @@
 package com.cesarvaliente.marvelapp
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
@@ -37,13 +38,13 @@ class MarvelActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.d("MarvelThread", "Running on thread: ${Thread.currentThread().name}")
         setContent {
             MarvelAppTheme {
                 val uiState by viewModel.uiState.collectAsState()
                 SuperHeroesList(heroesList = uiState.superHeroesList)
             }
         }
-        viewModel.getSuperHeroList()
     }
 }
 

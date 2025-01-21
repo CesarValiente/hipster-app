@@ -1,8 +1,11 @@
 package com.cesarvaliente.foundation.datamock
 
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
+
 class DataMockRepository {
-    fun getSuperHeroesList() : List<SuperHero> {
-        return listOf(
+    fun getSuperHeroesList() : Flow<List<SuperHero>> = flow {
+        val superHeroList = listOf(
             SuperHero(
                 name = "Tony Stark",
                 superName = "IronMan",
@@ -122,5 +125,6 @@ class DataMockRepository {
                 imageUri = R.raw.wintersoldier
             )
         )
+        emit(superHeroList)
     }
 }
