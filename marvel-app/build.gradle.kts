@@ -9,3 +9,7 @@ android {
         applicationId = "com.cesarvaliente.marvelapp"
     }
 }
+
+dependencies {
+    implementation(project(":foundation:data-mock"))
+}

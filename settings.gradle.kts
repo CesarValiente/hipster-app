@@ -15,7 +15,10 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "hipsterApp"
+
 include(":app")
+include(":marvel-app")
 include(":foundation")
 include(":foundation:network")
-include(":marvel-app")
+include(":foundation:data-mock")
+include(":foundation:data")
